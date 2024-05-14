@@ -14,7 +14,9 @@ import java.io.IOException;
 public class RequestLoggingFilter implements Filter {
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+    public void doFilter(ServletRequest request,
+                         ServletResponse response,
+                         FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         log.info("Logging Request  {} : {}", req.getMethod(), req.getRequestURI());
