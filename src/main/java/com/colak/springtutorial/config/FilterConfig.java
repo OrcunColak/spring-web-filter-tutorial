@@ -1,6 +1,6 @@
-package com.colak.springwebfiltertutorial.config;
+package com.colak.springtutorial.config;
 
-import com.colak.springwebfiltertutorial.filter.RequestLoggingFilter;
+import com.colak.springtutorial.filter.RequestLoggingFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

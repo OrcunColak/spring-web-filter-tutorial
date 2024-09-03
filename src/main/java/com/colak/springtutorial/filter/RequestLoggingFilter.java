@@ -1,4 +1,4 @@
-package com.colak.springwebfiltertutorial.filter;
+package com.colak.springtutorial.filter;
 
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
