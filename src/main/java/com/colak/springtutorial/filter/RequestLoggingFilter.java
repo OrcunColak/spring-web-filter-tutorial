@@ -18,8 +18,16 @@ public class RequestLoggingFilter implements Filter {
                          ServletResponse response,
                          FilterChain chain)
             throws IOException, ServletException {
-        HttpServletRequest req = (HttpServletRequest) request;
-        log.info("Logging Request  {} : {}", req.getMethod(), req.getRequestURI());
+
+        // Wrap the original request
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+        CustomHttpServletRequestWrapper wrappedRequest = new CustomHttpServletRequestWrapper(httpRequest);
+
+        // Log the request body (for demonstration purposes)
+        String requestBody = new String(wrappedRequest.getInputStream().readAllBytes());
+        System.out.println("Request body before chain: " + requestBody);
+
+        log.info("Logging Request  {} : {}", httpRequest.getMethod(), httpRequest.getRequestURI());
 
         // Continue the request chain
         chain.doFilter(request, response);
